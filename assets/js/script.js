@@ -62,11 +62,11 @@ class ListaContatos{
     }
     //metodo adicionar para dar push no array
     adicionar(contato){
-        /*if(inputVazio()){
+        if(inputVazio()){
             mensagemDeErro("preencha todos os campos");
-        }else{*/
+        }else{
             this.arrayContatos.push(contato);
-        //}
+        }
     }
 }
 const listaContatos = new ListaContatos;
@@ -99,4 +99,22 @@ function limparCampos() {
     document.getElementById("cidade").value = "";
     document.getElementById("insta").value = "";
     document.getElementById("git").value = "";
+}
+//function inputVazio para verificar se nenhum input está vazio
+function inputVazio(){
+    let nome = document.getElementById("nome").value;
+    let phone = document.getElementById("phone").value;
+    let cell = document.getElementById("cell").value;
+    let url = document.getElementById("url").value;
+    let nascimento = document.getElementById("nascimento").value;
+    let email = document.getElementById("email").value;
+    let cep = document.getElementById("cep").value;
+    let cidade = document.getElementById("cidade").value;
+    let insta = document.getElementById("insta").value;
+    let git = document.getElementById("git").value;
+    if(nome == "" || phone ==""  || cell == "" || url == "" || nascimento == "" || email == "" || cep == "" || cidade == "" || insta == "" || git == ""){
+        return true
+    }else{
+        return false
+    }
 }
