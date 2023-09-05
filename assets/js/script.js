@@ -113,8 +113,16 @@ function inputVazio(){
     let insta = document.getElementById("insta").value;
     let git = document.getElementById("git").value;
     if(nome == "" || phone ==""  || cell == "" || url == "" || nascimento == "" || email == "" || cep == "" || cidade == "" || insta == "" || git == ""){
-        return true
+        return true;
     }else{
-        return false
+        return false;
     }
+}
+//function mensagemDeErro para enviar uma mensagem de erro
+function mensagemDeErro(msg){
+    document.getElementById("msg").innerHTML = msg;
+    document.getElementById("msg").classList.remove("hidden");
+    setTimeout(function(){
+        document.getElementById("msg").classList.add("hidden")
+    },4000)
 }
