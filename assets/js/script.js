@@ -69,8 +69,19 @@ class ListaContatos{
         }
     }
 }
-const ListaContatos = new ListaContatos;
+const listaContatos = new ListaContatos;
 //function criarContato para colocar os dados dos inputs no objeto
 function criarContato(){
-    let
+    let nome = document.getElementById("nome").value;
+    let phone = document.getElementById("phone").value;
+    let cell = document.getElementById("cell").value;
+    let url = document.getElementById("url").value;
+    let nascimento = document.getElementById("nascimento").value;
+    let email = document.getElementById("email").value;
+    let cep = document.getElementById("cep").value;
+    let cidade = document.getElementById("cidade").value;
+    let insta = document.getElementById("insta").value;
+    let git = document.getElementById("git").value;
+    let contato = new Contado(nome, phone, cell, url, nascimento, email, cep, cidade, insta, git);
+    listaContatos.adicionar(contato);
 }
