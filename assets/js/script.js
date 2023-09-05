@@ -62,11 +62,11 @@ class ListaContatos{
     }
     //metodo adicionar para dar push no array
     adicionar(contato){
-        if(inputVazio()){
+        /*if(inputVazio()){
             mensagemDeErro("preencha todos os campos");
-        }else{
+        }else{*/
             this.arrayContatos.push(contato);
-        }
+        //}
     }
 }
 const listaContatos = new ListaContatos;
@@ -84,4 +84,19 @@ function criarContato(){
     let git = document.getElementById("git").value;
     let contato = new Contado(nome, phone, cell, url, nascimento, email, cep, cidade, insta, git);
     listaContatos.adicionar(contato);
+    limparCampos()
+    console.log(listaContatos)
+}
+//function limparCampos para ... limpar os campos :/
+function limparCampos() {
+    document.getElementById("nome").value= "";
+    document.getElementById("phone").value = "";
+    document.getElementById("cell").value = "";
+    document.getElementById("url").value = "";
+    document.getElementById("nascimento").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("cep").value = "";
+    document.getElementById("cidade").value = "";
+    document.getElementById("insta").value = "";
+    document.getElementById("git").value = "";
 }
