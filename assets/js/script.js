@@ -65,8 +65,12 @@ class ListaContatos{
         if(inputVazio()){
             mensagemDeErro("preencha todos os campos");
         }else{
-            this.arrayContatos.push(contato)
+            this.arrayContatos.push(contato);
         }
     }
 }
-const ListaContatos = new ListaContatos
+const ListaContatos = new ListaContatos;
+//function criarContato para colocar os dados dos inputs no objeto
+function criarContato(){
+    let
+}
