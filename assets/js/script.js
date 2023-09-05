@@ -153,5 +153,5 @@ function mostrarConteudo() {
             </div>
         `;
     });
-    document.getElementById("content-container")
+    document.getElementById("content-container").innerHTML = html
 }
