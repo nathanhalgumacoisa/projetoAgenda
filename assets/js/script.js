@@ -68,6 +68,9 @@ class ListaContatos{
             this.arrayContatos.push(contato);
         }
     }
+    pegarTudo(){
+        return this.arrayContatos
+    }
 }
 const listaContatos = new ListaContatos;
 //function criarContato para colocar os dados dos inputs no objeto
@@ -85,6 +88,7 @@ function criarContato(){
     let contato = new Contado(nome, phone, cell, url, nascimento, email, cep, cidade, insta, git);
     listaContatos.adicionar(contato);
     limparCampos()
+    mostrarConteudo()
     console.log(listaContatos)
 }
 //function limparCampos para ... limpar os campos :/
@@ -125,4 +129,29 @@ function mensagemDeErro(msg){
     setTimeout(function(){
         document.getElementById("msg").classList.add("hidden")
     },4000)
+} 
+
+function formatarNumero(numero){
+    let numeroArray = numero.split("");
+    let numeroFormatado = "(" + numeroArray[0] + numeroArray[1] + ")"
+        + " " + numeroArray[2] + numeroArray[3] + numeroArray[4]
+        + numeroArray[5] + numeroArray[6] + "-"
+        + numeroArray[7] + numeroArray[8]
+        + numeroArray[9] + numeroArray[10];
+    return numeroFormatado;
+}
+//function mostrarConteudo para colocar as informações no html
+function mostrarConteudo() {
+    const contatos = listaContatos.pegarTudo();
+    let html = "";
+    contatos.forEach((contato) => {
+        html += `
+            <div class="content">
+                <h2>${contato.nome}</h2>
+                <p>Telefone Fixo: ${formatarNumero(contato.phone)}</p>
+                <p>Telefone Celular: ${formatarNumero(contato.cell)}</p>
+            </div>
+        `;
+    });
+    document.getElementById("content-container")
 }
