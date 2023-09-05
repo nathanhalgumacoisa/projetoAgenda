@@ -146,12 +146,24 @@ function mostrarConteudo() {
     let html = "";
     contatos.forEach((contato) => {
         html += `
-            <div class="content">
+            <button onclick="mostrarAside"><div class="content">
+              <div class="content-text">
                 <h2>${contato.nome}</h2>
                 <p>Telefone Fixo: ${formatarNumero(contato.phone)}</p>
                 <p>Telefone Celular: ${formatarNumero(contato.cell)}</p>
-            </div>
+              </div>
+              <div class="content-image">
+                <img src="${contato.url}">
+            </div></button>
         `;
     });
     document.getElementById("content-container").innerHTML = html
+}
+function dataBr(data) {
+    let dataGringa = data.split("-");
+    let dataPt = dataGringa[2] + "/" + dataGringa[1] + "/" + dataGringa[0];
+    return dataPt
+}
+function mostrarAside(){
+
 }

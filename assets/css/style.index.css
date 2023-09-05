@@ -35,3 +35,25 @@ input{
 .hidden{
     display: none;
 }
+#content-container{
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    align-items: center;
+    align-content: center;
+    background-color: #fefefe;
+    border: solid 0.0.0.1px;
+    padding: 1rem;
+    margin: 2%;
+    display: flex;
+}
+.content img{
+    width: 15vw;
+    height: 20vh;
+    margin-bottom: 1%;   
+}
+.content :hover{
+    box-shadow: 0.1rem;
+    box-sizing: 0.1rem;
+}
