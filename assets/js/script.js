@@ -23,6 +23,7 @@ class Contado{
         }
         return idade;
     }
+    //metodo para calcular o signo dos contatos
     pegarSigno(){
         let nascimeto = new Date(this.nascimento);
         let dia = nascimeto.getDate();
@@ -54,3 +55,18 @@ class Contado{
         }
     }
 }
+//classe ListaContatos
+class ListaContatos{
+    constructor(){
+        this.arrayContatos = []; 
+    }
+    //metodo adicionar para dar push no array
+    adicionar(contato){
+        if(inputVazio()){
+            mensagemDeErro("preencha todos os campos");
+        }else{
+            this.arrayContatos.push(contato)
+        }
+    }
+}
+const ListaContatos = new ListaContatos

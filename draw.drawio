@@ -57,6 +57,32 @@
                 <mxCell id="22" value="-pegarSigno(): string" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#141414;" vertex="1" parent="2">
                     <mxGeometry y="250" width="130" height="30" as="geometry"/>
                 </mxCell>
+                <mxCell id="23" value="" style="group;fontSize=12;fontColor=#141414;" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="350.00000000000006" y="-27" width="252" height="248.09000000000003" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="group;fontSize=12;fontColor=#141414;" vertex="1" connectable="0" parent="23">
+                    <mxGeometry y="83.94" width="176" height="80.21000000000001" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontSize=12;fontColor=#141414;" edge="1" parent="24" source="26">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="173.93968253968242" y="40.105000000000075" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;fontColor=#ffffff;strokeColor=#000000;strokeWidth=2;container=0;fontSize=12;" vertex="1" parent="24">
+                    <mxGeometry width="174.60317460317444" height="80.21" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;fontColor=#ffffff;strokeColor=#000000;strokeWidth=2;container=0;fontSize=12;" vertex="1" parent="24">
+                    <mxGeometry y="27.11" width="175.99999999999997" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="ListaContatos" style="text;strokeColor=none;fillColor=none;html=1;fontSize=16;fontStyle=1;verticalAlign=middle;align=center;fontColor=#141414;container=0;" vertex="1" parent="24">
+                    <mxGeometry x="33" y="-6.939999999999998" width="110" height="41.02454799353226" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="arrayContatos: string[]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#141414;container=0;" vertex="1" parent="24">
+                    <mxGeometry y="19.59" width="160" height="41.02" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="-adicionar(): void" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#141414;" vertex="1" parent="24">
+                    <mxGeometry x="13" y="50.21000000000001" width="130" height="30" as="geometry"/>
+                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
