@@ -1,6 +1,15 @@
-//classe Contado
-class Contado{
-    constructor(nome, phone, cell, url, nascimento, email, cep, cidade, insta, git ){
+//classe Contato
+
+
+
+
+
+
+
+
+
+class Contato{
+    constructor(nome, phone, cell, url, nascimento, email, cep, cidade, insta, git,identidade ){
         this.nome = nome;
         this.phone = phone;
         this.cell = cell;
@@ -11,6 +20,7 @@ class Contado{
         this.cidade = cidade;
         this.insta = insta;
         this.git = git;
+        this.identidade = identidade;
     }
     //metodo para calcular a idade dos contatos
     calcularIdade(){
@@ -85,7 +95,8 @@ function criarContato(){
     let cidade = document.getElementById("cidade").value;
     let insta = document.getElementById("insta").value;
     let git = document.getElementById("git").value;
-    let contato = new Contado(nome, phone, cell, url, nascimento, email, cep, cidade, insta, git);
+    let identidade = Math.floor(Math.random()*3000)
+    let contato = new Contato(nome, phone, cell, url, nascimento, email, cep, cidade, insta, git, identidade);
     listaContatos.adicionar(contato);
     limparCampos()
     mostrarConteudo()
@@ -164,6 +175,42 @@ function dataBr(data) {
     let dataPt = dataGringa[2] + "/" + dataGringa[1] + "/" + dataGringa[0];
     return dataPt
 }
-function mostrarAside(){
+function formatarCep(cep){
+    let cepArray = cep.split("");
+    let cepFormatado = cepArray[0] + cepArray[1] + cepArray[2]
+    + cepArray[3] + cepArray[4] + "-"
+    + cepArray[5] + cepArray[6]
+    + cepArray[7]
 
+    return cepFormatado
+}
+
+function mostrarAside(identidade){
+    const contatoss = listaContatos.pegarTudo();
+    let aside = "";
+    contatoss.forEach((contato) => {
+       aside += `
+           <div id="aside-text">
+                <div id="first-infos"
+                    <h3>detalhe</h3>
+                    <img src="${contato.url}">
+                    <h2>${contato.nome}</h2>
+                    <p>Identificador: ${contato.identidade}</p>
+                </div>
+                <div>
+                    <p>Celular: ${formatarNumero(contato.cell)}</p>
+                    <p>Telefone: ${formatarNumero(contato.tell)}</p>
+                    <p>Data de nascimento: ${dataBR(contato.nascimento)}</p>
+                    <p>Idade: ${contato.idade}</p>
+                    <p>Signo: ${contato.pegarSigno()}</p>
+                    <p>Email: ${contato.email}</p>
+                    <p>CEP: ${formatarCep(contato.cep)}</p>
+                    <p>Cidade: ${contato.cidade}</p>
+                    <p>Instragram: ${contato.insta}</p>
+                    <p>Github: ${contato.git}</p>
+                </div>
+           </div>
+        `;
+    });
+    document.getElementById("content-aside").innerHTML =aside
 }
