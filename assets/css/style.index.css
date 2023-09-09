@@ -47,13 +47,21 @@ input{
     display: flex;
     flex-direction: column;
 }
+#contbtn{
+    border: none;
+    background-color:#fefefe ;
+    margin-bottom: 2%;
+    max-width: 500px;
+}
+#contbtn:hover{ 
+   background-color: #919191;
+   padding: 0;
+}
 .content{
     align-items: center;
     align-content: center;
     background-color: #fefefe;
-    border: solid 0.0.0.1px;
     padding: 1rem;
-    margin: 2%;
     display: flex;
 }
 .content img{
@@ -61,7 +69,6 @@ input{
     height: 20vh;
     margin-bottom: 1%;   
 }
-.content :hover{
-    box-shadow: 0.1rem;
-    box-sizing: 0.1rem;
+.content:hover{
+    background-color: #919191;
 }

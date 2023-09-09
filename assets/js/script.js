@@ -1,13 +1,4 @@
 //classe Contato
-
-
-
-
-
-
-
-
-
 class Contato{
     constructor(nome, phone, cell, url, nascimento, email, cep, cidade, insta, git,identidade ){
         this.nome = nome;
@@ -21,6 +12,7 @@ class Contato{
         this.insta = insta;
         this.git = git;
         this.identidade = identidade;
+        this.signo = this.pegarSigno()
     }
     //metodo para calcular a idade dos contatos
     calcularIdade(){
@@ -80,6 +72,13 @@ class ListaContatos{
     }
     pegarTudo(){
         return this.arrayContatos
+    }
+    mostrarContatoPeloId(identidade){
+        this.arrayContatos.forEach((contato) => {
+            if(contato.identidade == identidade){
+                mostrarAside()
+            }
+        })
     }
 }
 const listaContatos = new ListaContatos;
@@ -157,7 +156,7 @@ function mostrarConteudo() {
     let html = "";
     contatos.forEach((contato) => {
         html += `
-            <button onclick="mostrarAside"><div class="content">
+            <button id="contbtn" onclick="mostrarAside"><div class="content">
               <div class="content-text">
                 <h2>${contato.nome}</h2>
                 <p>Telefone Fixo: ${formatarNumero(contato.phone)}</p>
@@ -202,7 +201,7 @@ function mostrarAside(identidade){
                     <p>Telefone: ${formatarNumero(contato.tell)}</p>
                     <p>Data de nascimento: ${dataBR(contato.nascimento)}</p>
                     <p>Idade: ${contato.idade}</p>
-                    <p>Signo: ${contato.pegarSigno()}</p>
+                    <p>Signo: ${contato.signo}</p>
                     <p>Email: ${contato.email}</p>
                     <p>CEP: ${formatarCep(contato.cep)}</p>
                     <p>Cidade: ${contato.cidade}</p>
