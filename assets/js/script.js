@@ -73,13 +73,7 @@ class ListaContatos{
     pegarTudo(){
         return this.arrayContatos
     }
-    mostrarContatoPeloId(identidade){
-        this.arrayContatos.forEach((contato) => {
-            if(contato.identidade == identidade){
-                mostrarAside()
-            }
-        })
-    }
+   
 }
 const listaContatos = new ListaContatos;
 //function criarContato para colocar os dados dos inputs no objeto
@@ -96,6 +90,7 @@ function criarContato(){
     let git = document.getElementById("git").value;
     let identidade = Math.floor(Math.random()*3000)
     let contato = new Contato(nome, phone, cell, url, nascimento, email, cep, cidade, insta, git, identidade);
+    contato.idade = contato.calcularIdade()
     listaContatos.adicionar(contato);
     limparCampos()
     mostrarConteudo()
@@ -156,7 +151,7 @@ function mostrarConteudo() {
     let html = "";
     contatos.forEach((contato) => {
         html += `
-            <button id="contbtn" onclick="mostrarAside"><div class="content">
+            <button id="contbtn" onclick="mostrarAside(${contato.identidade})"><div class="content">
               <div class="content-text">
                 <h2>${contato.nome}</h2>
                 <p>Telefone Fixo: ${formatarNumero(contato.phone)}</p>
@@ -166,6 +161,7 @@ function mostrarConteudo() {
                 <img src="${contato.url}">
             </div></button>
         `;
+        console.log(contato.signo)
     });
     document.getElementById("content-container").innerHTML = html
 }
@@ -188,9 +184,10 @@ function mostrarAside(identidade){
     const contatoss = listaContatos.pegarTudo();
     let aside = "";
     contatoss.forEach((contato) => {
+      if(contato.identidade == identidade){
        aside += `
            <div id="aside-text">
-                <div id="first-infos"
+                <div id="first-infos">
                     <h3>detalhe</h3>
                     <img src="${contato.url}">
                     <h2>${contato.nome}</h2>
@@ -198,8 +195,8 @@ function mostrarAside(identidade){
                 </div>
                 <div>
                     <p>Celular: ${formatarNumero(contato.cell)}</p>
-                    <p>Telefone: ${formatarNumero(contato.tell)}</p>
-                    <p>Data de nascimento: ${dataBR(contato.nascimento)}</p>
+                    <p>Telefone: ${formatarNumero(contato.phone)}</p>
+                    <p>Data de nascimento: ${dataBr(contato.nascimento)}</p>
                     <p>Idade: ${contato.idade}</p>
                     <p>Signo: ${contato.signo}</p>
                     <p>Email: ${contato.email}</p>
@@ -209,7 +206,7 @@ function mostrarAside(identidade){
                     <p>Github: ${contato.git}</p>
                 </div>
            </div>
-        `;
+        `;}
     });
-    document.getElementById("content-aside").innerHTML =aside
+    document.getElementById("content-aside").innerHTML = aside
 }

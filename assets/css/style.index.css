@@ -51,7 +51,7 @@ input{
     border: none;
     background-color:#fefefe ;
     margin-bottom: 2%;
-    max-width: 500px;
+    max-width: 600px;
 }
 #contbtn:hover{ 
    background-color: #919191;
