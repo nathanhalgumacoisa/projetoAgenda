@@ -88,3 +88,12 @@ input{
 #last-infos{
     margin-left: 8%;
 }
+#htn{
+    width: 2vw;
+    height: 2vh;
+    border: none;
+    background-color: #fefefe;
+    font-size: 35px;
+    margin-bottom: 2%;
+    margin-left: 90%;
+}

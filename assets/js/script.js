@@ -188,8 +188,8 @@ function mostrarAside(identidade){
        aside += `
            <div id="aside-text">
                 <div id="first-infos">
-                <button onclick="hideAside()"><i class="fa-solid fa-minus"></i></button>
-                    <h3>detalhe</h3>
+                <button id="htn" onclick="hideAside()"> - </i></button>
+                    <h2>Detalhe</h2>
                     <img src="${contato.url}">
                     <h2>${contato.nome}</h2>
                     <p>Identificador: ${contato.identidade}</p>
@@ -207,12 +207,13 @@ function mostrarAside(identidade){
                     <p>Github: ${contato.git}</p>
                 </div>
            </div>
-        `;}        
+        `;}  
+        document.getElementById("content-aside").classList.remove("hidden");
     });
     document.getElementById("main-aside").classList.add("flex");
     document.getElementById("content-aside").innerHTML = aside;
 }
 function hideAside(){
     document.getElementById("main-aside").classList.remove("flex");
-    document.getElementById("main-aside").classList.add("hidden");
+    document.getElementById("content-aside").classList.add("hidden");
 }
