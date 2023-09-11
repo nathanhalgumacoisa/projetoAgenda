@@ -8,10 +8,8 @@ body{
 h1{
     text-align: center;
 }
-#main-aside{
-    align-items: center;
-    align-content: center;
-    
+.flex{
+    display: flex;
 }
 main{
     display: flex;
@@ -71,4 +69,22 @@ input{
 }
 .content:hover{
     background-color: #919191;
+}
+#aside-text{
+    margin-left: 100%;
+    background-color: #fefefe;
+    width: 30vw;
+    height: 110vh;
+}
+#first-infos{
+    margin-bottom: 5%;
+    margin-left: 2%;
+}
+#first-infos img{
+    width: 15vw;
+    height: 20vh;
+    margin-bottom: 1%;   
+}
+#last-infos{
+    margin-left: 8%;
 }

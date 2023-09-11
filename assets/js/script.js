@@ -163,7 +163,7 @@ function mostrarConteudo() {
         `;
         console.log(contato.signo)
     });
-    document.getElementById("content-container").innerHTML = html
+    document.getElementById("content-container").innerHTML = html;
 }
 function dataBr(data) {
     let dataGringa = data.split("-");
@@ -188,12 +188,13 @@ function mostrarAside(identidade){
        aside += `
            <div id="aside-text">
                 <div id="first-infos">
+                <button onclick="hideAside()"><i class="fa-solid fa-minus"></i></button>
                     <h3>detalhe</h3>
                     <img src="${contato.url}">
                     <h2>${contato.nome}</h2>
                     <p>Identificador: ${contato.identidade}</p>
                 </div>
-                <div>
+                <div id="last-infos">
                     <p>Celular: ${formatarNumero(contato.cell)}</p>
                     <p>Telefone: ${formatarNumero(contato.phone)}</p>
                     <p>Data de nascimento: ${dataBr(contato.nascimento)}</p>
@@ -206,7 +207,12 @@ function mostrarAside(identidade){
                     <p>Github: ${contato.git}</p>
                 </div>
            </div>
-        `;}
+        `;}        
     });
-    document.getElementById("content-aside").innerHTML = aside
+    document.getElementById("main-aside").classList.add("flex");
+    document.getElementById("content-aside").innerHTML = aside;
+}
+function hideAside(){
+    document.getElementById("main-aside").classList.remove("flex");
+    document.getElementById("main-aside").classList.add("hidden");
 }
